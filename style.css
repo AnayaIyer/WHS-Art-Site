@@ -1,1 +1,62 @@
+body{
+	margin-top:30px;
+	background-color: ghostwhite;
+}
+nav{
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 28px;
+	
+}
+
+a{
+	margin:20px;
+}
+
+a.nounderline{
+	text-decoration:none;
+}
+
+h1{
+	font-size: 25px;
+	font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+p{
+	font-size:18px;
+	font-family: 'Trebuchet MS', sans-serif;
+}
+
+.hero-image{
+	background-color: rgba(0, 0, 0, 0.3);
+	background-image: url("Images/communityguidelinespromo.png");
+	background-position-y:-235px;
+	background-size: 1080px 720px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode:darken;
+}
+
+.text{
+	text-align: center;
+	filter: drop-shadow(0px 0px 20px black);
+	color: white;
+}
+
+
+img.bgrd{
+	vertical-align:middle;
+}
+	
+
+h2{
+	font-size:24px;
+}
+
+
+
+
+
+background-color: hsl(253,100%, 91%);
+
 
