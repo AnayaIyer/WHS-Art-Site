@@ -17,10 +17,13 @@
 	}
 	
 	.navbar{
-		margin-left: 120px;
 		margin-right: 120px;
-		overflow: hidden;
 		margin-left:10px;
+	}
+	
+	.side-by-side{
+		overflow: hidden;
+		display: grid;
 	}
 	
 	.nav{
@@ -31,24 +34,38 @@
 		color: white;
 	}
 	
+	h1{
+		margin:10px;
+	}
+	
+	.i{
+		float: left;
+		margin-right: 20px;
+	}
+	
 </style>
 
 <div class="nav-and-logo">
-<div class="navbar">
-		<img src="Images/whslogo.png" alt="WHS logo" width=50px height=50px;>
-		<h1 style="font-size:32px;">WHS Art Site</h1>
+	<div class="navbar">
 	
-
-	<div class="nav">
-		<nav>
-		<a href="index.html">Home</a>
-		<a class="nounderline" href="about.html">About</a>
-		<a class="nounderline" href="drawing.html">Drawing</a>
-		<a class="nounderline" href="painting.html">Painting</a>
-		<a class="nounderline" href="staffwork.html">Staff Work</a>
-		</nav>
+		<div class="side-by-side">
+			<a class="nounderline" href="index.html">
+				<img class="i" src="Images/whslogo.png" alt="WHS logo" width=50px height=50px;>
+				<h1 style="font-size:32px;">WHS Art Site</h1>
+			</a>
+		</div>
+		
+		
+			<div class="nav">
+				<nav>
+				<a href="index.html">Home</a>
+				<a class="nounderline" href="about.html">About</a>
+				<a class="nounderline" href="drawing.html">Drawing</a>
+				<a class="nounderline" href="painting.html">Painting</a>
+				<a class="nounderline" href="staffwork.html">Staff Work</a>
+				</nav>
+			</div>
 	</div>
-</div>
 </div>
 
 <br>
