@@ -6,7 +6,7 @@
 	<title>Portfolio Website</title>
 	<link href="style.css"  rel="stylesheet" type="text/css"/>
 	<link rel="icon" type="image/x-icon" href="Images/whslogo.png">
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
 	font-family: 'Trebuchet MS', sans-serif;
@@ -163,6 +163,12 @@ body {
 				<a class="nounderline" href="drawing.html">Drawing</a>
 				<a href="painting.html">Mixed Media</a>
 				<a class="nounderline" href="staffwork.html">Staff Work</a>
+				<div class="search-container">
+					<form action="/action_page.php">
+					  <input type="text" placeholder="Search.." name="search">
+					  <button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				  </div>
 				</nav>
 			</div>
 	</div>
@@ -171,15 +177,27 @@ body {
 <br>
 <br>
 
+<div id="filters">
+	<button class="active" onclick="filterSelection('all')">Show all</button>
+	<button class="btn" onclick="filterSelection('print')">Printmaking</button>
+	<button class="btn" onclick="filterSelection('acrylic')">Acrylic</button>
+	<button class="btn" onclick="filterSelection('water')">Watercolor</button>
+	<button class="btn" onclick="filterSelection('oil')">Oil</button>
+</div>
+
+<br>
+
 <center>
 
-	<img class="myImages" id="myImg" src="Images/IMG_4401.jpg" alt="" width=25% height=25%/>
-	<img class="myImages" id="myImg" src="Images/JuliaYoungGrandma.jpg" alt="Painting by Julia Young" width=25% height=25%/>
-	<img class="myImages" id="myImg" src="Images/GVlinos.jpg" alt="Linoleum by GV" width=25% height=25%/>
-	<img class="myImages" id="myImg" src="Images/GVlastoneMFFFFFFF.jpg" alt="Print work by GV" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/GVtrip.jpg" alt="Print work by GV" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/DaniellaAspots.jpg" alt="Artwork by Daniella A" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/NasonHPrint.jpg" alt="Print by Nason Hubbard" width=38% height=38%/>
+	<img class="myImages fildiv oil" id="myImg" src="Images/IMG_4401.jpg" alt="" width=25% height=25%/>
+	<img class="myImages fildiv acrylic" id="myImg" src="Images/JuliaYoungGrandma.jpg" alt="Painting by Julia Young" width=25% height=25%/>
+	<img class="myImages fildiv print" id="myImg" src="Images/GVlinos.jpg" alt="Linoleum by GV" width=25% height=25%/>
+	<img class="myImages fildiv print" id="myImg" src="Images/GVlastoneMFFFFFFF.jpg" alt="Print work by GV" width=38% height=38%/>
+	<img class="myImages fildiv print" id="myImg" src="Images/GVtrip.jpg" alt="Print work by GV" width=38% height=38%/>
+	<img class="myImages fildiv water" id="myImg" src="Images/DaniellaAspots.jpg" alt="Artwork by Daniella A" width=38% height=38%/>
+	<img class="myImages fildiv print" id="myImg" src="Images/NasonHPrint.jpg" alt="Print by Nason Hubbard" width=38% height=38%/>
+	<img class="myImages fildiv oil" id="myImg" src="Images/Grad and Bac covers (May 23, 2024 at 11_56 AM).jpg" alt="Graduation oil painting by WHS student" width=25% height=25%/>
+
 
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
