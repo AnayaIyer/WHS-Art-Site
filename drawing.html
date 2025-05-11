@@ -6,7 +6,7 @@
 	<title>WHS Art Site</title>
 	<link href="style.css"  rel="stylesheet" type="text/css"/>
 	<link rel="icon" type="image/x-icon" href="Images/whslogo.png">
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
 	font-family: 'Trebuchet MS', sans-serif;
@@ -100,15 +100,44 @@ body {
     width: 100%;
   }
 }
-</style>
 
+.fildiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
 
-	
-</head>
+.show {
+  display: block;
+}
 
-<body>
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
 
-<style>
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
 	.nav-and-logo{
 		background-color: MidnightBlue;
 		padding: 20px;
@@ -145,6 +174,13 @@ body {
 	
 </style>
 
+
+	
+</head>
+
+<body>
+
+
 <div class="nav-and-logo">
 	<div class="navbar">
 	
@@ -163,6 +199,12 @@ body {
 				<a href="drawing.html">Drawing</a>
 				<a class="nounderline" href="painting.html">Mixed Media</a>
 				<a class="nounderline" href="staffwork.html">Staff Work</a>
+				<div class="search-container">
+					<form action="/action_page.php">
+					  <input type="text" placeholder="Search.." name="search">
+					  <button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				  </div>
 				</nav>
 			</div>
 	</div>
@@ -171,17 +213,25 @@ body {
 <br>
 <br>
 
-<center>
 
-	<img class="myImages" id="myImg" src="Images/AngelynLopezPrint.jpeg" alt="Graphite portrait by Angelyn Lopez" width=25% height=25%/>
-	<img class="myImages" id="myImg" src="Images/JuliaYoungFacialStudy.jpeg" alt="Facial study by Julia Young" width=25% height=25%/>
-	<img class="myImages" id="myImg" src="Images/JP.jpg" alt="Self portrait by JP width=25% height=25%/>
-	<img class="myImages" id="myImg" src="Images/GVtdself.jpeg" alt="Self portrait by GV" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/IMG_8733.jpg" alt="Graduation digital drawing by WHS student" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/SaloniPatelPortrait.jpeg" alt="Self portrait by Saloni Patel" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/Tianna2.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/Tianna1.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
-	<img class="myImages" id="myImg" src="Images/Grad and Bac covers (May 23, 2024 at 11_56 AM).jpg" alt="Graduation oil painting by WHS student" width=25% height=25%/>
+<div id="filters">
+	<button class="btn active" onclick="filterSelection('all')">Show all</button>
+	<button class="btn" onclick="filterSelection('graphitecharcoal')">Graphite/Charcoal</button>
+	<button class="btn" onclick="filterSelection('digital')">Digital</button>
+	<button class="btn" onclick="filterSelection('portrait')">Portrait</button>
+</div>
+
+<br>
+
+<center>
+	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/AngelynLopezPrint.jpeg" alt="Graphite portrait by Angelyn Lopez" width=25% height=25%/>
+	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/JuliaYoungFacialStudy.jpeg" alt="Charcoal facial study by Julia Young" width=25% height=25%/>
+	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/JP.jpg" alt="Self portrait by JP" width=25% height=25%/>
+	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/GVtdself.jpeg" alt="Self portrait by GV" width=38% height=38%/>
+	<img class="myImages fildiv digital" id="myImg" src="Images/IMG_8733.jpg" alt="Graduation digital drawing by WHS student" width=38% height=38%/>
+	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/SaloniPatelPortrait.jpeg" alt="Self portrait by Saloni Patel" width=38% height=38%/>
+	<img class="myImages fildiv portrait digital" id="myImg" src="Images/Tianna2.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
+	<img class="myImages fildiv portrait digital" id="myImg" src="Images/Tianna1.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
 
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
@@ -191,6 +241,50 @@ body {
 	
 	
 <script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("fildiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+var btnContainer = document.getElementById("filters");
+var btns = filters.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+
+
 var modal = document.getElementById('myModal');
 var images = document.getElementsByClassName('myImages');
 var modalImg = document.getElementById("img01");
