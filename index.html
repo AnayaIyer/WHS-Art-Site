@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
 <html>
 
@@ -7,19 +6,9 @@
 	<link href="style.css"  rel="stylesheet" type="text/css"/>
 	<link rel="icon" type="image/x-icon" href="Images/whslogo.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-	font-family: 'Trebuchet MS', sans-serif;
-	font-size: 22px;
-}
-</style>
-
-
-	
 </head>
-
+	
 <body>
-
 
 <div class="nav-and-logo">
 	<div class="navbar">
@@ -28,130 +17,67 @@ body {
 			<a class="nounderline" href="index.html">
 				<img class="i" src="Images/whslogo.png" alt="WHS logo" width=50px height=50px;>
 				<h1 style="font-size:32px;">WHS Art Site</h1>
+				<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			 </div>
 			</a>
+			
 		</div>
 		
 		
 			<div class="nav">
 				<nav>
-				<a class="nounderline" href="index.html">Home</a>
+				<a href="index.html">Home</a>
 				<a class="nounderline" href="about.html">About</a>
-				<a href="drawing.html">Drawing</a>
+				<a class="nounderline" href="drawing.html">Drawing</a>
 				<a class="nounderline" href="painting.html">Mixed Media</a>
 				<a class="nounderline" href="staffwork.html">Staff Work</a>
-				<div class="search-container">
-					<form action="/action_page.php">
-					  <input type="text" placeholder="Search.." name="search">
-					  <button type="submit"><i class="fa fa-search"></i></button>
-					</form>
-				  </div>
 				</nav>
+				
 			</div>
 	</div>
 </div>
 
 <br>
-<br>
+	
+	<div class="hero-image">
+		<div class="text">
+			<div class="padding">
+				<style>
+					.padding{padding:200px}
+				</style>
+				<h1 style="font-size:40px; margin:0px;">Welcome to the WHS Gallery</h1>
+				<p>Explore work from staff and students</p>
+			</div>
+		</div>
+	</div>
 
 
-<div id="filters">
-	<button class="btn active" onclick="filterSelection('all')">Show all</button>
-	<button class="btn" onclick="filterSelection('graphitecharcoal')">Graphite/Charcoal</button>
-	<button class="btn" onclick="filterSelection('digital')">Digital</button>
-	<button class="btn" onclick="filterSelection('portrait')">Portrait</button>
-</div>
 
-<br>
+<br><br><br>
 
 <center>
-	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/AngelynLopezPrint.jpeg" alt="Graphite portrait by Angelyn Lopez" width=25% height=25%/>
-	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/JuliaYoungFacialStudy.jpeg" alt="Charcoal facial study by Julia Young" width=25% height=25%/>
-	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/JP.jpg" alt="Self portrait by JP" width=25% height=25%/>
-	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/GVtdself.jpeg" alt="Self portrait by GV" width=38% height=38%/>
-	<img class="myImages fildiv digital" id="myImg" src="Images/IMG_8733.jpg" alt="Graduation digital drawing by WHS student" width=38% height=38%/>
-	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/SaloniPatelPortrait.jpeg" alt="Self portrait by Saloni Patel" width=38% height=38%/>
-	<img class="myImages fildiv portrait digital" id="myImg" src="Images/Tianna2.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
-	<img class="myImages fildiv portrait digital" id="myImg" src="Images/Tianna1.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
-
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
+<h1>Featured Work</h1>
+<br>
+<div class="row">
+	<div class="column">
+		<img class="myImages" id="myImg" src="Images/JuliaYoungFacialStudy.jpeg" alt="Charcoal facial study by Julia Young" width=25% height=25%/>
+	</div>
+	<div class="column">
+		<img class="myImages" id="myImg" src="Images/Tianna1.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
+	</div>
+	<div class="column">
+		<img class="myImages" id="myImg" src="Images/DaniellaAspots.jpg" alt="Artwork by Daniella A" width=38% height=38%/>
+	</div>
 </div>
 	
-	
-<script>
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("fildiv");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-var btnContainer = document.getElementById("filters");
-var btns = filters.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-
-
-
-var modal = document.getElementById('myModal');
-var images = document.getElementsByClassName('myImages');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-for (var i = 0; i < images.length; i++) {
-  var img = images[i];
-  
-  img.onclick = function(evt) {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
-}
-
-var span = document.getElementsByClassName("close")[0];
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
-
 	
 	
 </center>
-
 	
 	
 </body>
-
-</html>
+	
