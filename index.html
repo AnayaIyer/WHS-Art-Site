@@ -43,6 +43,19 @@
 		margin-right: 20px;
 	}
 	
+	.search-container{
+		float: right;
+	}
+	
+	.column{
+		flex: 33.33%
+		padding: 10px;
+	}
+	
+	.row{
+		justify-content: center;
+		display: flex;
+	}
 </style>
 
 <div class="nav-and-logo">
@@ -52,7 +65,14 @@
 			<a class="nounderline" href="index.html">
 				<img class="i" src="Images/whslogo.png" alt="WHS logo" width=50px height=50px;>
 				<h1 style="font-size:32px;">WHS Art Site</h1>
+				<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			 </div>
 			</a>
+			
 		</div>
 		
 		
@@ -63,13 +83,8 @@
 				<a class="nounderline" href="drawing.html">Drawing</a>
 				<a class="nounderline" href="painting.html">Mixed Media</a>
 				<a class="nounderline" href="staffwork.html">Staff Work</a>
-				<div class="search-container">
-					<form action="/action_page.php">
-					  <input type="text" placeholder="Search.." name="search">
-					  <button type="submit"><i class="fa fa-search"></i></button>
-					</form>
-				  </div>
 				</nav>
+				
 			</div>
 	</div>
 </div>
@@ -87,6 +102,30 @@
 			</div>
 		</div>
 	</div>
+
+
+
+<br><br><br>
+
+<center>
+<h1>Featured Work</h1>
+<br>
+<div class="row">
+	<div class="column">
+		<img class="myImages" id="myImg" src="Images/JuliaYoungFacialStudy.jpeg" alt="Charcoal facial study by Julia Young" width=25% height=25%/>
+	</div>
+	<div class="column">
+		<img class="myImages" id="myImg" src="Images/Tianna1.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
+	</div>
+	<div class="column">
+		<img class="myImages" id="myImg" src="Images/DaniellaAspots.jpg" alt="Artwork by Daniella A" width=38% height=38%/>
+	</div>
+</div>
+	
+	
+	
+</center>
+	
 	
 </body>
 	
