@@ -31,7 +31,7 @@ p{
 
 .hero-image{
 	background-color: rgba(0, 0, 0, 0.3);
-	background-image: url("Images/backofschool.jpg");
+	background-image: url("Images/20250512_111047.jpg");
 	background-position-y:-350px;
 	background-size: 1080px 720px;
 	background-repeat: no-repeat;
@@ -114,13 +114,12 @@ h1{
 }
 
 .column{
-	
-	padding: 10px;
+	float: left;
+	width: 33.33%;
 }
 
 .row{
-	justify-content: center;
-	display: flex;
+	
 }
 
 #myImg {
