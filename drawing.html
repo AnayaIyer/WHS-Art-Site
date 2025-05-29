@@ -101,16 +101,18 @@ img{
 <br>
 
 
-<div id="filters">
-	<button class="btn active" onclick="filterSelection('all')">Show all</button>
-	<button class="btn" onclick="filterSelection('graphitecharcoal')">Graphite/Charcoal</button>
-	<button class="btn" onclick="filterSelection('digital')">Digital</button>
-	<button class="btn" onclick="filterSelection('portrait')">Portrait</button>
+<div id="myBtnContainer">
+	<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+	<button class="btn" onclick="filterSelection('graphitecharcoal')">Printmaking</button>
+	<button class="btn" onclick="filterSelection('digital')">Acrylic</button>
+	<button class="btn" onclick="filterSelection('portrait')">Watercolor</button>
 </div>
 
 <br>
 
 <center>
+
+<div class="container">
 	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/AngelynLopezPrint.jpeg" alt="Graphite portrait by Angelyn Lopez" width=25% height=25%/>
 	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/JuliaYoungFacialStudy.jpeg" alt="Charcoal facial study by Julia Young" width=25% height=25%/>
 	<img class="myImages fildiv graphitecharcoal portrait" id="myImg" src="Images/JP.jpg" alt="Self portrait by JP" width=25% height=25%/>
@@ -120,7 +122,8 @@ img{
 	<img class="myImages fildiv portrait digital" id="myImg" src="Images/Tianna2.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
 	<img class="myImages fildiv portrait digital" id="myImg" src="Images/Tianna1.jpg" alt="Digital artwork by Tianna" width=38% height=38%/>
 	<img class="myImages fildiv portrait graphitecharcoal" id="myImg" src="Images/20250517_001352.jpg" alt="Self-portrait by Anaya Iyer" width=38% height=38%/>
-
+</div>
+	
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
