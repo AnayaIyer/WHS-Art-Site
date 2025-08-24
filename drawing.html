@@ -42,23 +42,20 @@ body {
 }
 
 .container {
-  overflow: hidden;
+	display: flex; /* Makes the container a flexible box */
+    flex-wrap: wrap; /* Allows items to wrap to a new line */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 10px;
 }
 
-.filterDiv {
-  float: left;
-  display: none; 
+img {
+    margin: 5px; /* Adds a margin around each image */
 }
-
 
 .show {
   display: block;
 }
 
-img{
-	margin: 5px;
-	float: left;
-}
 </style>
 
 
@@ -110,7 +107,7 @@ img{
 
 <br>
 
-<center>
+
 
 <div class="container">
 	<img class="myImages filterDiv graphitecharcoal portrait" id="myImg" src="Images/AngelynLopezPrint.jpeg" alt="Graphite portrait by Angelyn Lopez" width=25% height=25%/>
@@ -207,8 +204,7 @@ span.onclick = function() {
 </script>
 
 	
-	
-</center>
+
 
 	
 	
